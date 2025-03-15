@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@theme {
+/* @theme {
   --font-vazir: Vazir, system-ui, sans-serif;
 
   --color-primary: #3d405b;
@@ -19,11 +19,34 @@
   --color-text-light: #888888;
 
   --background-default: #fafafa;
-}
+} */
+@layer base {
+  :root {
+    --font-vazir: Vazir, system-ui, sans-serif;
 
-:root {
-  background-color: var(--background-default);
-  font-family: var(--font-vazir);
+    --color-primary: #3d405b;
+    --color-primary-light: #81b29a;
+    --color-primary-dark: #e07a5f;
+
+    --color-secondary-blue: #2c3e50;
+    --color-secondary-red: #e74c3c;
+
+    --color-neutral-50: #f4f1de;
+    --color-neutral-100: #f2ccbf;
+    --color-neutral-background: #fafafa;
+
+    --color-text-default: #101b30;
+    --color-text-muted: #666666;
+    --color-text-light: #888888;
+
+    --color-layout: #ffaa33;
+
+    --background-default: #fafafa;
+  }
+  body {
+    background-color: var(--background-default);
+    font-family: var(--font-vazir);
+  }
 }
 
 @layer base {
@@ -34,5 +57,26 @@
       url('assets/fonts/Vazir.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+  }
+}
+@layer utilities {
+  .bg-layout {
+    background-color: var(--color-layout);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .text-primary-light {
+    color: var(--color-primary-light);
+  }
+
+  .bg-primary-light {
+    background-color: var(--color-primary-light);
   }
 }
