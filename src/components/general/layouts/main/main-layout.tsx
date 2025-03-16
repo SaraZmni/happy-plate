@@ -7,7 +7,7 @@ import Sidebar from '../sidebar/sidebar';
 
 const MainLayout: FC = () => {
   return (
-    <div dir="rtl" className="grid h-screen w-full grid-cols-4">
+    <div dir="rtl" className="grid h-screen w-full grid-cols-4 ">
       <aside className="col-span-1 ">
         <Sidebar />
       </aside>

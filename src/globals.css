@@ -1,25 +1,5 @@
 @import 'tailwindcss';
 
-/* @theme {
-  --font-vazir: Vazir, system-ui, sans-serif;
-
-  --color-primary: #3d405b;
-  --color-primary-light: #81b29a;
-  --color-primary-dark: #e07a5f;
-
-  --color-secondary-blue: #2c3e50;
-  --color-secondary-red: #e74c3c;
-
-  --color-neutral-50: #f4f1de;
-  --color-neutral-100: #f2ccbf;
-  --color-neutral-background: #fafafa;
-
-  --color-text-default: #101b30;
-  --color-text-muted: #666666;
-  --color-text-light: #888888;
-
-  --background-default: #fafafa;
-} */
 @layer base {
   :root {
     --font-vazir: Vazir, system-ui, sans-serif;
@@ -28,7 +8,7 @@
     --color-primary-light: #81b29a;
     --color-primary-dark: #e07a5f;
 
-    --color-secondary-blue: #2c3e50;
+    --color-main-blue: #428b94;
     --color-secondary-red: #e74c3c;
 
     --color-neutral-50: #f4f1de;
@@ -39,9 +19,8 @@
     --color-text-muted: #666666;
     --color-text-light: #888888;
 
-    --color-layout: #ffaa33;
-
-    --background-default: #fafafa;
+    --color-layout: #fafafa;
+    --color-layout-secondary: #e9e9e9;
   }
   body {
     background-color: var(--background-default);
@@ -60,12 +39,18 @@
   }
 }
 @layer utilities {
-  .bg-layout {
-    background-color: var(--color-layout);
+  .bg-layout-main {
+    background-color: var(--color-layout-main);
+  }
+  .border-layout-main {
+    border: 1px solid var(--color-layout-secondary);
   }
 
   .text-primary {
     color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-main-blue);
   }
 
   .bg-primary {
