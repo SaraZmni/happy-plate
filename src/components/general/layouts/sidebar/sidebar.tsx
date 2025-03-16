@@ -22,9 +22,9 @@ const Sidebar: FC = () => {
             className={`${menu.gap ? 'mt-10' : 'mt-2'} text-xl`}
             key={menu.id || `menu-${menu.title}`}
           >
-            <button type="button">
-              <span>{menu.title}</span>
-              <span>{menu.icon}</span>
+            <button className="grid w-full grid-cols-6 p-2" type="button">
+              <div className="grid h-full place-content-center">{menu.icon}</div>
+              <div className="col-span-5 grid place-items-start">{menu.title}</div>
             </button>
           </li>
         ))}
