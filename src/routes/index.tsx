@@ -1,14 +1,25 @@
 import type { FC } from 'react';
 
+import { lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router';
 
-import MainLayout from '../components/general/layouts/main/main-layout';
+const MainLayout = lazy(() => import('../components/general/layouts/main/main-layout'));
+const Login = lazy(() => import('./login/login'));
+const Profile = lazy(() => import('./profile/profile'));
+const MealBooking = lazy(() => import('./meal-booking/meal-booking'));
+const UserManagement = lazy(() => import('./user-management/user-management'));
 
 const AppRouter: FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<MainLayout />} path="/" />
+        <Route element={<MainLayout />}>
+          <Route index element={<MealBooking />} />
+          <Route element={<UserManagement />} path="users" />
+        </Route>
+
+        <Route element={<Login />} path="login" />
+        <Route element={<Profile />} path="profile" />
       </Routes>
     </BrowserRouter>
   );
