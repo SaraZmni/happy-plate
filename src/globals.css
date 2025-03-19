@@ -64,4 +64,24 @@
   .bg-primary-light {
     background-color: var(--color-primary-light);
   }
+  @layer utilities {
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .hover\:bg-gradient-animated:hover {
+      background: linear-gradient(
+        90deg,
+        rgba(244, 241, 222, 0.32) 10%,
+        rgba(224, 122, 95, 0.32) 100%
+      );
+      background-size: 200% 200%;
+      animation: gradientMove 5s infinite alternate;
+    }
+  }
 }

@@ -8,23 +8,25 @@ import Logo from '../../ui-kit/logo/logo';
 
 const Sidebar: FC = () => {
   const Menus = [
-    { id: 0, title: 'مجتبی منصوری', icon: null, gap: false },
-    { id: 1, title: 'مشاهده پروفایل', icon: <LuCircleUserRound />, gap: true },
-    { id: 2, title: 'رزرو غذا', icon: <PiForkKnifeBold />, gap: false },
-    { id: 3, title: 'مشاهده سبد خرید', icon: <MdOutlineShoppingCart />, gap: false },
+    { id: 1, title: 'مشاهده پروفایل', icon: <LuCircleUserRound /> },
+    { id: 2, title: 'رزرو غذا', icon: <PiForkKnifeBold /> },
+    { id: 3, title: 'مشاهده سبد خرید', icon: <MdOutlineShoppingCart /> },
   ];
   return (
     <div className={`border-layout-main h-screen w-full border-l p-5 pt-8 `}>
       <Logo />
-      <ul className="pt-6">
+      <ul className="pt-2">
+        <div className="px-4 py-6 text-2xl font-medium">مجتبی منصوری</div>
         {Menus.map((menu) => (
-          <li
-            className={`${menu.gap ? 'mt-10' : 'mt-2'} text-xl`}
-            key={menu.id || `menu-${menu.title}`}
-          >
-            <button type="button">
-              <span>{menu.title}</span>
-              <span>{menu.icon}</span>
+          <li className="group" key={menu.id || `menu-${menu.title}`}>
+            <button
+              className="hover:bg-gradient-animated grid w-full grid-cols-6 p-2 text-sm"
+              type="button"
+            >
+              <div className="grid h-full place-content-center text-3xl">{menu.icon}</div>
+              <div className="col-span-5 grid items-center justify-items-start">
+                <span>{menu.title}</span>
+              </div>
             </button>
           </li>
         ))}
