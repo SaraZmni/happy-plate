@@ -18,6 +18,7 @@ const Sidebar: FC = () => {
       <Logo />
       <ul className="pt-6">
         {Menus.map((menu) => (
+          // only for testing git
           <li
             className={`${menu.gap ? 'mt-10' : 'mt-2'} text-xl`}
             key={menu.id || `menu-${menu.title}`}
