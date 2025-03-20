@@ -8,6 +8,7 @@ const Login = lazy(() => import('./login/login'));
 const Profile = lazy(() => import('./profile/profile'));
 const MealBooking = lazy(() => import('./meal-booking/meal-booking'));
 const UserManagement = lazy(() => import('./user-management/user-management'));
+const ShoppingCart = lazy(() => import('./shopping-cart/shopping-cart'));
 
 const AppRouter: FC = () => {
   return (
@@ -16,6 +17,7 @@ const AppRouter: FC = () => {
         <Route element={<MainLayout />}>
           <Route index element={<MealBooking />} />
           <Route element={<UserManagement />} path="users" />
+          <Route element={<ShoppingCart />} path="shopping-cart" />
         </Route>
 
         <Route element={<Login />} path="login" />

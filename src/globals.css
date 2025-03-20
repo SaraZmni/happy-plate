@@ -40,7 +40,7 @@
 }
 @layer utilities {
   .bg-layout-main {
-    background-color: var(--color-layout-main);
+    background-color: var(--color-layout);
   }
   .border-layout-main {
     border: 1px solid var(--color-layout-secondary);
@@ -82,6 +82,18 @@
       );
       background-size: 200% 200%;
       animation: gradientMove 5s infinite alternate;
+    }
+
+    .border-gradient {
+      border-bottom: 4px solid;
+      border-image-source: linear-gradient(
+        270deg,
+        rgba(224, 122, 95, 0.7) 0%,
+        rgba(242, 204, 143, 0.8) 13.5%,
+        #f4f1de 31.5%,
+        rgba(244, 241, 222, 0) 62%
+      );
+      border-image-slice: 1;
     }
   }
 }

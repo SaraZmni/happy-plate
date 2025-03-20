@@ -7,15 +7,13 @@ import Sidebar from '../sidebar/sidebar';
 
 const MainLayout: FC = () => {
   return (
-    <div dir="rtl" className="grid h-screen w-full grid-cols-4 ">
+    <div dir="rtl" className="bg-layout-main grid h-screen w-full grid-cols-4">
       <aside className="col-span-1 ">
         <Sidebar />
       </aside>
 
       <div className="col-span-3 grid grid-rows-[auto_1fr_auto]">
-        <header>
-          <Header />
-        </header>
+        <Header />
 
         <main>
           <Outlet />
