@@ -5,11 +5,15 @@ import { MdOutlineShoppingCart } from 'react-icons/md';
 import { PiForkKnifeBold } from 'react-icons/pi';
 import { useNavigate } from 'react-router';
 
+import type { MenuItemType } from './sidebar-types';
+
 import Logo from '../../ui-kit/logo/logo';
+import { useLayoutContext } from '../../ui-kit/providers/layout-provider';
 
 const Sidebar: FC = () => {
   const navigate = useNavigate();
-  const Menus = [
+  const { setSidebarData } = useLayoutContext();
+  const Menus: MenuItemType[] = [
     { id: 1, title: 'مشاهده پروفایل', icon: <LuCircleUserRound /> },
     { id: 2, title: 'رزرو غذا', icon: <PiForkKnifeBold /> },
     { id: 3, title: 'مشاهده سبد خرید', icon: <MdOutlineShoppingCart /> },
@@ -28,6 +32,10 @@ const Sidebar: FC = () => {
         break;
     }
   };
+  const handleChange = (ItemData: MenuItemType) => {
+    navigateToPageById(ItemData.id);
+    setSidebarData(ItemData);
+  };
   return (
     <div className={`border-layout-main h-screen w-full border-l bg-white p-5 pt-8 `}>
       <Logo />
@@ -38,7 +46,7 @@ const Sidebar: FC = () => {
             <button
               className="hover:bg-gradient-animated grid w-full cursor-pointer grid-cols-6 p-2 text-sm"
               type="button"
-              onClick={() => navigateToPageById(menu.id)}
+              onClick={() => handleChange(menu)}
             >
               <div className="grid h-full place-content-center text-3xl">{menu.icon}</div>
               <div className="col-span-5 grid items-center justify-items-start">
