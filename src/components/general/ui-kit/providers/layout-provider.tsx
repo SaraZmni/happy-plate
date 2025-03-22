@@ -1,6 +1,7 @@
 import type { Dispatch, FC, ReactNode } from 'react';
 
 import { createContext, useContext, useMemo, useState } from 'react';
+import { PiForkKnifeBold } from 'react-icons/pi';
 
 interface MenuItemType {
   id: number;
@@ -21,10 +22,11 @@ interface LayoutProviderProps {
 
 export const LayoutProvider: FC<LayoutProviderProps> = ({ children }) => {
   const [sidebarData, setSidebarData] = useState<MenuItemType>({
-    id: 0,
-    title: 'Default Menu',
-    icon: <div>Default Icon</div>,
+    id: 2,
+    title: 'رزرو غذا',
+    icon: <PiForkKnifeBold />,
   });
+
   const contextValue = useMemo(
     () => ({ sidebarData, setSidebarData }),
     [sidebarData, setSidebarData],

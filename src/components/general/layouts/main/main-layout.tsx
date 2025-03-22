@@ -16,12 +16,9 @@ const MainLayout: FC = () => {
 
         <div className="col-span-3 grid grid-rows-[auto_1fr_auto]">
           <Header />
-
           <main>
             <Outlet />
           </main>
-
-          <footer className="bg-purple-700 p-2 text-center text-gray-100">footer</footer>
         </div>
       </div>
     </LayoutProvider>

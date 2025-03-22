@@ -18,10 +18,10 @@ const AppRouter: FC = () => {
           <Route index element={<MealBooking />} />
           <Route element={<UserManagement />} path="users" />
           <Route element={<ShoppingCart />} path="shopping-cart" />
+          <Route element={<Profile />} path="profile" />
         </Route>
 
         <Route element={<Login />} path="login" />
-        <Route element={<Profile />} path="profile" />
       </Routes>
     </BrowserRouter>
   );

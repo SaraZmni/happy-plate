@@ -45,6 +45,18 @@
   .border-layout-main {
     border: 1px solid var(--color-layout-secondary);
   }
+  .bg-login-page {
+    background-image: url('assets/images/login.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bg-profile-page {
+    background-image: url('assets/images/profile.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   .text-primary {
     color: var(--color-primary);
