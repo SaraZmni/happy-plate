@@ -19,7 +19,7 @@ import Button from '../../components/general/ui-kit/button/button';
 const LoginForm: FC = () => {
   return (
     <div className="bg-login-page flex min-h-screen items-center justify-center">
-      <div className="w-96 bg-white p-10 shadow-lg">
+      <div className="w-1/4 bg-white p-10 shadow-lg">
         <h1 className="mb-6 text-center text-xl font-bold">ورود به حساب کاربری</h1>
         <form>
           <div className="mb-4">
