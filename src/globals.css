@@ -51,6 +51,9 @@
   .border-layout-secondary {
     border: 1px solid var(--color-layout-light);
   }
+  .border-b-layout-secondary {
+    border-bottom: 1px solid var(--color-layout-light);
+  }
   .bg-login-page {
     background-image: url('assets/images/login.png');
     background-size: cover;

@@ -1,17 +1,3 @@
-// import type { FC } from 'react';
-
-// const LoginForm: FC = () => {
-//   return (
-//     <div className="flex min-h-screen items-center justify-center">
-//       <div className="rounded bg-white p-8 shadow-lg">
-//         <h1 className="mb-4 text-2xl font-bold">Login</h1>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default LoginForm;
-
 import type { FC } from 'react';
 
 import Button from '../../components/general/ui-kit/button/button';
