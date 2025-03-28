@@ -2,6 +2,8 @@ import type { FC } from 'react';
 
 import { useState } from 'react';
 
+import DailyMeals from './components/daily-meals';
+
 const MealBooking: FC = () => {
   const [selectedKey, setSelectedKey] = useState('');
 
@@ -10,11 +12,7 @@ const MealBooking: FC = () => {
   };
   return (
     <>
-      <div className="grid grid-cols-[1fr_2fr_2fr_2fr] place-items-center gap-4 p-4">
-        <div className="col-start-2">صبحانه</div>
-        <div>ناهار</div>
-        <div>شام</div>
-      </div>
+      <DailyMeals />
       <div className="border-layout-main mx-auto grid w-11/12 grid-cols-[1fr_2fr_2fr_2fr] place-items-center py-2 shadow-md">
         <time>
           <div className="font-medium">شنبه</div>
