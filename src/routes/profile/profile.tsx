@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
+import WalletMonitor from '../../components/general/wallet-monitor/wallet-monitor';
 import ProfileForm from './components/profile-form';
-import WalletMonitor from './components/wallet-monitor';
 
 const Profile: FC = () => {
   return (

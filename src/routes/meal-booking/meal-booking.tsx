@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { useState } from 'react';
 
-import DailyMeals from './components/daily-meals';
+import DailyMeals from '../../components/general/daily-meals/daily-meals';
 
 const MealBooking: FC = () => {
   const [selectedKey, setSelectedKey] = useState('');
