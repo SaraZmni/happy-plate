@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router';
 
 import type { MenuItemType } from './sidebar-types';
 
+import Calendar from '../../ui-kit/calendar/calendar';
 import Logo from '../../ui-kit/logo/logo';
 import { useLayoutContext } from '../../ui-kit/providers/layout-provider';
 
@@ -37,7 +38,7 @@ const Sidebar: FC = () => {
     setSidebarData(ItemData);
   };
   return (
-    <div className={`border-layout-main h-screen w-full border-l bg-white p-5 pt-8 `}>
+    <div className={`border-layout-main h-screen w-full border-l bg-[#fcfcfc] p-5 pt-8 `}>
       <Logo />
       <ul className="pt-2">
         <div className="px-4 py-6 text-2xl font-medium">مجتبی منصوری</div>
@@ -56,6 +57,7 @@ const Sidebar: FC = () => {
           </li>
         ))}
       </ul>
+      <Calendar />
     </div>
   );
 };
