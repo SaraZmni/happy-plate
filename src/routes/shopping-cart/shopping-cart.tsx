@@ -1,15 +1,19 @@
 import type { FC } from 'react';
 
+import { FaArrowRightLong } from 'react-icons/fa6';
 import { ImBin } from 'react-icons/im';
+import { useNavigate } from 'react-router';
 
 import DailyMeals from '../../components/general/daily-meals/daily-meals';
 import WalletMonitor from '../../components/general/wallet-monitor/wallet-monitor';
+import Payment from './components/payment';
 
 const ShoppingCart: FC = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <WalletMonitor />
-      <div className="h-90 grid justify-items-center">
+      <div className="grid h-1/2 justify-items-center">
         <div className="w-10/12 shadow-2xl">
           <DailyMeals />
           <div className="grid grid-cols-6 px-4">
@@ -108,6 +112,15 @@ const ShoppingCart: FC = () => {
           </div>
         </div>
       </div>
+      <Payment />
+      <button
+        className="mx-auto grid cursor-pointer auto-cols-max grid-flow-col items-center gap-2 text-sm text-red-600"
+        type="button"
+        onClick={() => navigate('/')}
+      >
+        <FaArrowRightLong className="size-4" />
+        بازگشت به صفحه رزرو غذا
+      </button>
     </div>
   );
 };
