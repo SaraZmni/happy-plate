@@ -1,10 +1,12 @@
 import type { FC } from 'react';
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 import DailyMeals from '../../components/general/daily-meals/daily-meals';
 
 const MealBooking: FC = () => {
+  const navigate = useNavigate();
   const [selectedKey, setSelectedKey] = useState('');
 
   const handleSelection = (key: string) => {
@@ -51,6 +53,13 @@ const MealBooking: FC = () => {
           </label>
         </div>
       </div>
+      <button
+        className=" mx-auto my-3 grid cursor-pointer bg-[#3D405B] px-10  py-2.5 text-sm text-white transition-colors duration-200 hover:bg-[#484B69] focus:outline-none focus:ring-2 focus:ring-[#3D405B]/50"
+        type="submit"
+        onClick={() => navigate('/shopping-cart')}
+      >
+        برو به سبد خرید
+      </button>
     </>
   );
 };
