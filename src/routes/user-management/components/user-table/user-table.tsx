@@ -84,44 +84,57 @@ const UserTable: FC = () => {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="p-2">
-      <table>
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(header.column.columnDef.header, header.getContext())}
-                </th>
+    <div className="mx-auto max-w-4xl p-6">
+      <div className="overflow-hidden rounded-xl border border-gray-200/50 bg-white shadow-lg">
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <tr key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <th
+                      key={header.id}
+                      className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider
+                      text-gray-600"
+                    >
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(header.column.columnDef.header, header.getContext())}
+                    </th>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+            </thead>
+            <tbody className="divide-y divide-gray-200 bg-white">
+              {table.getRowModel().rows.map((row) => (
+                <tr
+                  className="transition-colors duration-150 ease-in-out hover:bg-gray-50"
+                  key={row.id}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-700" key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </td>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </tbody>
-        <tfoot>
-          {table.getFooterGroups().map((footerGroup) => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(header.column.columnDef.footer, header.getContext())}
-                </th>
+            </tbody>
+            <tfoot>
+              {table.getFooterGroups().map((footerGroup) => (
+                <tr key={footerGroup.id}>
+                  {footerGroup.headers.map((header) => (
+                    <th key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(header.column.columnDef.footer, header.getContext())}
+                    </th>
+                  ))}
+                </tr>
               ))}
-            </tr>
-          ))}
-        </tfoot>
-      </table>
+            </tfoot>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
