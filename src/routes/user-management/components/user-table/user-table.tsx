@@ -121,9 +121,12 @@ const UserTable: FC = () => {
             </tbody>
             <tfoot>
               {table.getFooterGroups().map((footerGroup) => (
-                <tr key={footerGroup.id}>
+                <tr className="border-t border-gray-200 bg-gray-50" key={footerGroup.id}>
                   {footerGroup.headers.map((header) => (
-                    <th key={header.id}>
+                    <th
+                      className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                      key={header.id}
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(header.column.columnDef.footer, header.getContext())}
